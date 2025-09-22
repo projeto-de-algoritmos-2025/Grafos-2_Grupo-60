@@ -27,6 +27,14 @@ Foram escolhidos quatro exercícios da plataforma online e dividido entre a dupl
 ![](assets/3112submitted.png)
 [Código](code/3112.py)
 
+-[1584. Min Cost to Connect All Points (Médio)](https://leetcode.com/problems/min-cost-to-connect-all-points/description/)
+![1584](assets/LeetCode1584.png)
+[Código](code/1584.cpp)
+
+-[1928. Minimum Cost to Reach Destination in Time (Difícil)](https://leetcode.com/problems/minimum-cost-to-reach-destination-in-time/description/)
+![1928](assets/LeetCode1928.png)
+[Código](code/1928.cpp)
+
 
 ## Instalação 
 **Linguagem**: Python e C++<br> 
