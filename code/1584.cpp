@@ -18,7 +18,7 @@ public:
         vector<int> explored(n, 0);
         explored[0] = 1;
         // MinHeap
-        using T = tuple<int, int, int, int>  // Distancia, Node_Final, X_Final, Y_Final
+        using T = tuple<int, int, int, int>;  // Distancia, Node_Final, X_Final, Y_Final
         priority_queue<T, vector<T>, greater<T>> MinHeap;
         
         int i = 0;  // Começando no Node 0
@@ -26,13 +26,14 @@ public:
             for(int j = 0; j < n; j++){ // Guarda todas as arestas
                 int distance = Distance(points[i][0], points[i][1], points[j][0], points[j][1]);    
                 if(distance != 0 && explored[j] == 0)   // Se não for ele mesmo e não for visitado
-                    MinHeap.push(distance, j, points[j][0], points[j][1]);  // Adiciona no Heap
+                    MinHeap.push({distance, j, points[j][0], points[j][1]});  // Adiciona no Heap
             }
-            auto v = minHeap.top();
-            minHeap.pop();
-            explored[v[1]]; // Marca como explorado
-            total += explored[0];
+            auto [d, v, x, y] = MinHeap.top();
+            MinHeap.pop();
+            explored[v] = 1; // Marca como explorado
+            total += d;
             count++;
         }
+        return total;
     }
 };
