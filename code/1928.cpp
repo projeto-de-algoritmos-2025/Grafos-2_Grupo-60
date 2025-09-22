@@ -1,4 +1,5 @@
 
+
 class Solution {
 public:
 
@@ -55,6 +56,6 @@ public:
             adj[e_end].push_back({e_start, e_time, passingFees[e_start]}); // Porque é não direcionado
         }
         
-        return dijkstra(adj, 0, n-1, maxTime, minCost, minTime);
+        return Dijkstra(adj, 0, n-1, maxTime, minCost, minTime);
     }
 };
