@@ -1,5 +1,4 @@
 
-
 class Solution {
 public:
 
@@ -16,6 +15,7 @@ public:
         while(!MinHeap.empty()){
 
             auto [custo, tempo, Node] = MinHeap.top();
+            cout << custo<<' ' << tempo<<' ' << Node << '\n';
             MinHeap.pop();
             
             for(int i = 0; i < adj[Node].size(); i++){   // Para cada Vizinho do Node
@@ -46,7 +46,7 @@ public:
         minCost[0] = passingFees[0];    // Preço do nó inicial (unico conhecido no começo)
         minTime[0] = 0;                 // Já começa lá 
 
-        vector<vector<vector<int>>> adj;
+        vector<vector<vector<int>>> adj(n);
         for(int i = 0; i < m; i++){
             e_start = edges[i][0];
             e_end = edges[i][1];
