@@ -1,8 +1,19 @@
+/*
+    ________________________
+        Matheus Pinheiro
+           241025336
+    ________________________
+    Ideia: 
+        Fazer um MinHeap guardando [Custo, Tempo, Node]
+        Rodar um Dijkstra em cima desse Heap
+        Guardar o menor custo / tempo em "minCost[]" e "minTime[]"
+*/
+
 class Solution {
 public:
 
-    const int MAX_COST = 1001;
-    const int MAX_TIME = 1001;
+    const int MAX_COST = 1000001;   // Custo máximo = 10³ e n° Nodes máximo = 10³ então o custo toal máx = 10^6
+    const int MAX_TIME = 1001;      // Tempo máximo é 1000 então é equivalente ao infinito no algoritmo
 
     int Dijkstra(vector<vector<vector<int>>>& adj, int start, int end, int maxTime, vector<int>& minCost, vector<int>& minTime){
 
