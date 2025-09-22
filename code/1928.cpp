@@ -1,5 +1,3 @@
-
-
 class Solution {
 public:
 
@@ -8,7 +6,6 @@ public:
 
     int Dijkstra(vector<vector<vector<int>>>& adj, int start, int end, int maxTime, vector<int>& minCost, vector<int>& minTime){
 
-        int a=-1;
         using T = tuple<int, int, int>;
         priority_queue<T, vector<T>, greater<T>> MinHeap;
         MinHeap.push({minCost[start], minTime[start], start});
@@ -17,7 +14,6 @@ public:
         while(!MinHeap.empty()){
 
             auto [custo, tempo, Node] = MinHeap.top();
-            cout << "Indo para: " << a << " <-- "<<custo<<' ' << tempo<<' ' << Node << '\n';
             MinHeap.pop();
             for(int i = 0; i < adj[Node].size(); i++){   // Para cada Vizinho do Node
                 if(adj[Node][i][1] + tempo <= maxTime){   // Garante que não ultrapassa o tempo maximo
@@ -28,10 +24,9 @@ public:
                     }
                     else if(minTime[adj[Node][i][0]] > tempo + adj[Node][i][1]){
                         minTime[adj[Node][i][0]] = tempo + adj[Node][i][1];
-                        MinHeap.push({minCost[adj[Node][i][0]], minTime[adj[Node][i][0]], adj[Node][i][0]});
+                        MinHeap.push({custo + adj[Node][i][2], minTime[adj[Node][i][0]], adj[Node][i][0]});
                     }
                 }
-                a = adj[Node][i][0];
             }
         }
 
