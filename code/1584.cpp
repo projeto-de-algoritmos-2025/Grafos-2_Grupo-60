@@ -1,4 +1,12 @@
 /*
+    ________________________
+        Matheus Pinheiro
+           241025336
+    ________________________
+
+    Conteúdo Utilizado:
+        Prim's Algorithm
+        
     Ideia:
         Usar o algoritmo de Prim, fazendo a distancia do node inicial para todos os outros e adicionando essa distancia na Heap como se fosse uma aresta e assim por diante
 */
