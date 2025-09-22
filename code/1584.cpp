@@ -2,7 +2,6 @@
     Ideia:
         Usar o algoritmo de Prim, fazendo a distancia do node inicial para todos os outros e adicionando essa distancia na Heap como se fosse uma aresta e assim por diante
 */
-
 class Solution {
 public:
 
@@ -24,7 +23,8 @@ public:
         int i = 0;  // Começando no Node 0
         while(count < n){
             for(int j = 0; j < n; j++){ // Guarda todas as arestas
-                int distance = Distance(points[i][0], points[i][1], points[j][0], points[j][1]);    
+                int distance = Distance(points[i][0], points[i][1], points[j][0], points[j][1]);  
+                // cout << "Distance = " << distance << " De: " << i << " a " << j << '\n';      
                 if(distance != 0 && explored[j] == 0)   // Se não for ele mesmo e não for visitado
                     MinHeap.push({distance, j, points[j][0], points[j][1]});  // Adiciona no Heap
             }
@@ -33,6 +33,7 @@ public:
             explored[v] = 1; // Marca como explorado
             total += d;
             count++;
+            cout << "Distancia adicionada: " << d << "Chegando no Node: " << v << '\n'; 
         }
         return total;
     }
